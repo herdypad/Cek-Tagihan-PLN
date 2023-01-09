@@ -66,7 +66,6 @@
                 android:textColorHint="#515151"
                 android:textColor="@color/black"
                 android:id="@+id/ed_token"
-                android:text="543200673862"
                 android:hint=".................."
                 android:layout_width="match_parent"
                 android:layout_height="50dp">
@@ -104,7 +103,7 @@
         //hasil cek data
         <LinearLayout
             android:id="@+id/layoutHasil"
-            android:visibility="visible"
+            android:visibility="gone"
             android:orientation="vertical"
             android:padding="12dp"
             android:background="@drawable/round_layout_white"

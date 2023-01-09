@@ -1,6 +1,11 @@
 package com.listrikpln.tagiahanlistrikrumah;
 
+import static com.listrikpln.tagiahanlistrikrumah.adapter.RiwayatAdapter.DATA_NOMOR;
+
 import android.app.ProgressDialog;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -28,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     EditText ednoPln;
     LinearLayout layoutHasil,layoutError;
     TextView tvError;
-    Button btnClear;
+    Button btnClear, btnSimpanRiwayat;
 
 
     @Override
@@ -42,9 +48,30 @@ public class MainActivity extends AppCompatActivity {
         layoutError = findViewById(R.id.layouterror);
         tvError =  findViewById(R.id.tvError);
         btnClear = findViewById(R.id.clearall);
+        btnSimpanRiwayat = findViewById(R.id.btn_simpan_riwayat);
 
         Button btnRiwayat = findViewById(R.id.btn_riwayat);
         Button cekTagihan = findViewById(R.id.btn_cek);
+
+
+
+        //=========================status awal load============================
+        //untuk extra intent
+        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        if (getIntent().getStringExtra(DATA_NOMOR) != null){
+            String h = getIntent().getStringExtra(DATA_NOMOR);
+            ednoPln.setText(h);
+
+        }
+
+
+
+        btnSimpanRiwayat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Fitur Akan Segera Hadir", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
         cekTagihan.setOnClickListener(new View.OnClickListener() {
@@ -59,7 +86,8 @@ public class MainActivity extends AppCompatActivity {
         btnRiwayat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                responError(22);
+                Intent i = new Intent(MainActivity.this, RiwayatActivity.class);
+                startActivity(i);
             }
         });
 
@@ -69,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 clearAll();
             }
         });
+
 
 
     }
