@@ -6,13 +6,16 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.listrikpln.tagiahanlistrikrumah"
+        applicationId "com.listrikpln.tagihanlistrikrumah"
         minSdk 21
         targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        versionCode 6
+        versionName "1.0.6"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        setProperty("archivesBaseName", "Cek Tagihan Listrik. $versionName-$versionCode")
+
     }
 
     buildTypes {
@@ -29,11 +32,21 @@ android {
 
 dependencies {
 
+    //atasi errror sdk32
+    implementation 'androidx.work:work-runtime-ktx:2.7.1'
+
+    //Room
+    def room_version = "2.4.3"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
     //firebasase
 //    implementation 'com.google.firebase:firebase-config:21.1.2'
 
     //ads
     implementation 'com.google.android.gms:play-services-ads:20.2.0'
+
+
     implementation 'com.android.support:multidex:1.0.3'
     def lifecycle_version = "2.0.0"
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"

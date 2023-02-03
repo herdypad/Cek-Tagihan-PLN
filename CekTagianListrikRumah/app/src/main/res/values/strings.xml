@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Cek Tagian Listrik Rumah</string>
+
+<!--    develop-->
+    <string name="idaplikasi">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="benner" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+    <!--    <string name="openads" translatable="false">test</string>-->
+    <string name="openads" translatable="false">ca-app-pub-3298470686167339/4833778605</string>
+
+
+
+<!--    relis-->
+<!--    <string name="idaplikasi">ca-app-pub-3298470686167339~7791180327</string>-->
+<!--    <string name="benner" translatable="false">ca-app-pub-3298470686167339/6094955270</string>-->
+<!--    &lt;!&ndash;    <string name="openads" translatable="false">test</string>&ndash;&gt;-->
+<!--    <string name="openads" translatable="false">ca-app-pub-3298470686167339/4833778605</string>-->
+
+
 </resources>

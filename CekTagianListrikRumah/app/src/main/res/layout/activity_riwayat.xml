@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -8,6 +7,7 @@
     android:background="@color/bg"
     tools:context=".RiwayatActivity">
     <LinearLayout
+        android:layout_weight="0"
         android:padding="20dp"
         android:id="@+id/ly1"
         android:gravity="top"
@@ -35,9 +35,45 @@
 
         </TextView>
 
+
     </LinearLayout>
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingLeft="30dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="Total Riwayat Pesanan Anda"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </TextView>
+
+        <TextView
+            android:textSize="30sp"
+            android:id="@+id/tvTotalTagihan"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingLeft="30dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="RP.   000"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </TextView>
+    </LinearLayout>
+
+
+
+
     <ScrollView
+        android:layout_weight="1"
         android:layout_above="@+id/adView"
         android:layout_below="@+id/ly1"
         android:layout_width="match_parent"
@@ -64,15 +100,22 @@
 
     </ScrollView>
 
-<!--    <com.google.android.gms.ads.AdView-->
-<!--        android:id="@+id/adView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_gravity="bottom"-->
-<!--        app:adSize="SMART_BANNER"-->
-<!--        app:adUnitId="@string/benner">-->
+    <LinearLayout
+        android:layout_weight="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-<!--    </com.google.android.gms.ads.AdView>-->
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="bottom"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/benner">
+        </com.google.android.gms.ads.AdView>
+
+    </LinearLayout>
 </LinearLayout>
